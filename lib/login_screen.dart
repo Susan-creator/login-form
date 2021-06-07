@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key key}) : super(key: key);
@@ -24,22 +26,21 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.symmetric(horizontal: 18.0),
           child: Column(
             children: <Widget>[
               Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(10),
                 child: Text(
                   'Log in',
                   style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10),
                 child: Theme(
                   data:
                       Theme.of(context).copyWith(primaryColor: Colors.black26),
@@ -58,7 +59,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10),
                 child: Theme(
                   data:
                       Theme.of(context).copyWith(primaryColor: Colors.black26),
@@ -79,6 +79,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
@@ -91,24 +94,29 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 25,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 2.0,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.red[200],
-                  ),
-                  child: MaterialButton(
-                    child: Text(
-                      'Log in',
-                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 2.0,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: Colors.red[200],
+                      ),
+                      child: MaterialButton(
+                        child: Text('Log in',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold)),
+                        onPressed: () {},
+                      ),
                     ),
-                    onPressed: () {},
                   ),
-                ),
+                ],
               ),
+              SizedBox(),
               Row(
                 children: <Widget>[
                   Expanded(
@@ -136,83 +144,84 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               SizedBox(),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 2.0,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.black,
-                  ),
-                  child: MaterialButton(
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 10.0),
-                            child: Image.asset('assets/images/apple-logo.png',
-                                height: 200.0,
-                                width: 80.0,
-                                alignment: Alignment.topRight),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 60.0),
-                          child: Text(
-                            'Continue with Apple',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 13.0),
-                          ),
-                        ),
-                      ],
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 2.0,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.blue,
-                  ),
-                  child: MaterialButton(
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 45.0),
-                            child: Text(
-                              'f',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 2.0,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: Colors.black,
+                      ),
+                      child: MaterialButton(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              child: IconButton(
+                                icon: Icon(MaterialCommunityIcons.apple),
+                                iconSize: 25.0,
                                 color: Colors.white,
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
+                                onPressed: () {},
                               ),
                             ),
-                          ),
+                            SizedBox(width: 5),
+                            Text(
+                              'Continue with Apple',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 15.0),
-                          child: Text(
-                            'Continue with facebook',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 13.0),
-                          ),
-                        ),
-                      ],
+                        onPressed: () {},
+                      ),
                     ),
-                    onPressed: () {},
                   ),
-                ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 2.0,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: Colors.blue,
+                      ),
+                      child: MaterialButton(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              child: IconButton(
+                                icon: FaIcon(FontAwesomeIcons.facebook),
+                                iconSize: 25.0,
+                                color: Colors.white,
+                                onPressed: () {},
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              'Continue with Facebook',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
